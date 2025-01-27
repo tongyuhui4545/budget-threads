@@ -1,11 +1,17 @@
 import ProductList from "@/components/shared/product/product-list"
-import {getLatestProducts} from "@/lib/actions/product.actions";
+import { getLatestProducts } from "@/lib/actions/product.actions";
 
 const Homepage = async () => {
-  const latestProducts = await getLatestProducts()
+  const latestProducts = await getLatestProducts(); 
+  const arrangedProducts = latestProducts.map(i => (
+    {...i,
+      rating: Number(i.rating)
+    }
+   ))
+
   return (
     <>
-      <ProductList data={latestProducts} title='Newest Arrivals' limit={4} />
+      <ProductList data={arrangedProducts} title='Newest Arrivals' limit={4} />
     </>
   )
 }
