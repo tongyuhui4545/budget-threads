@@ -8,7 +8,7 @@ const inter = Inter({subsets: ['latin']});
 
 export const metadata: Metadata = {
   title: {
-    template: `$s | Budget Threads`,
+    template: `%s | Budget Threads`,
     default: APP_NAME
   },
   description: APP_DESCRIPTION,
